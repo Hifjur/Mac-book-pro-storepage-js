@@ -12,7 +12,7 @@ function priceFinder(filedValue){
     return value;
 }
 
-// setting string field
+// setting string field to display total price
 function displayString( stringId , output){
     const totalField = document.getElementById(stringId);
     totalField.innerText = output;
@@ -63,8 +63,8 @@ document.getElementById('coupon-apply-btn').addEventListener('click', function()
  
     if(couponCode.value == 'stevekaku'){
         const currentPrice=document.getElementById('final-price');
-        const value= parseInt(currentPrice.innerText)
-        const discountedPrice =value - ((value/100)*20);
+        const priceValue= parseInt(currentPrice.innerText)
+        const discountedPrice =priceValue - ((priceValue/100)*20);
         currentPrice.innerText = discountedPrice;
         couponCode.value = '';
 }
