@@ -56,10 +56,16 @@ document.getElementById('fast-delivary').addEventListener('click', function(){
     optionSelector('delivery-charge',20);
 });
 
-//coupon section
-document.getElementById('coupon-appy-btn').addEventListener('click', function(){
-    const couponCode= document.getElementById('coupon-input').innerText;
-    if(couponCode == 'stevekaku'){
-        
-    }
+//coupon Code tester
+
+document.getElementById('coupon-apply-btn').addEventListener('click', function(){
+    const couponCode = document.getElementById('coupon-input')
+ 
+    if(couponCode.value == 'stevekaku'){
+        const currentPrice=document.getElementById('final-price');
+        const value= parseInt(currentPrice.innerText)
+        const discountedPrice =value - ((value/100)*20);
+        currentPrice.innerText = discountedPrice;
+        couponCode.value = '';
+}
 });
